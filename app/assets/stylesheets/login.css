@@ -1,0 +1,10 @@
+#sign-in-form {
+    align-self: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: available;
+    max-width: 50rem;
+    align-content: start;
+    margin-top: 10rem
+}

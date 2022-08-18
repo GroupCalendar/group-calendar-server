@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GroupCalendarServerr</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <%= stylesheet_link_tag "application" %>
+  <title>GroupCalendarServerr</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+</head>
 
-    <%= stylesheet_link_tag "application" %>
-  </head>
-
-  <body>
+<body>
+<%= stylesheet_link_tag "common" %>
+<div class="nav-container" >
+  <nav class="nav">
+      <a class="brand" style="width: auto;" href="#">Group Calendar</a>
+      <a class="active"href="#" >Home</a>
+      <a href="#">Features</a>
+      <a href="#">Documentation</a>
+    <div class="nav-right">
+      <a class="button primary" href="/login">Sign in</a>
+    </div>
+  </nav>
+  <div class="page-content">
     <%= yield %>
-  </body>
+  </div>
+</div>
+</body>
 </html>

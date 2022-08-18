@@ -1,0 +1,44 @@
+@import url(chota.css);
+
+:root {
+    --bg-color: #ffffff;
+    --bg-secondary-color: #f3f3f6;
+    --color-primary: rgb(175, 28, 150);
+    --color-lightGrey: #d2d6dd;
+    --color-grey: #747681;
+    --color-darkGrey: #3f4144;
+    --color-error: #d43939;
+    --color-success: #28bd14;
+    --grid-maxWidth: 120rem;
+    --grid-gutter: 2rem;
+    --font-size: 1.6rem;
+    --font-color: #333333;
+    --font-family-sans: sans-serif;
+    --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
+}
+
+button.outline {
+    color: #730E15;
+}
+
+.nav-container {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+}
+
+nav {
+    width: 1024px;
+    max-width: 100vw;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.page-content {
+    width: 1024px;
+    max-width: 100vw;
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
