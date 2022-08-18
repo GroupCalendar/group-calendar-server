@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Under heavy development, not intended for use
 
-Things you may want to cover:
+[//]: # (This README would normally document whatever steps are necessary to get the)
 
-* Ruby version
+[//]: # (application up and running.)
 
-* System dependencies
+[//]: # ()
+[//]: # (Things you may want to cover:)
 
-* Configuration
+[//]: # ()
+[//]: # (* Ruby version)
 
-* Database creation
+[//]: # ()
+[//]: # (* System dependencies)
 
-* Database initialization
+[//]: # ()
+[//]: # (* Configuration)
 
-* How to run the test suite
+[//]: # ()
+[//]: # (* Database creation)
 
-* Services (job queues, cache servers, search engines, etc.)
+[//]: # ()
+[//]: # (* Database initialization)
 
-* Deployment instructions
+[//]: # ()
+[//]: # (* How to run the test suite)
 
-* ...
+[//]: # ()
+[//]: # (* Services &#40;job queues, cache servers, search engines, etc.&#41;)
+
+[//]: # ()
+[//]: # (* Deployment instructions)
+
+[//]: # ()
+[//]: # (* ...)
