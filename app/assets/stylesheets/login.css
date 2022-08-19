@@ -8,3 +8,16 @@
     align-content: start;
     margin-top: 10rem
 }
+
+.sign-in-button {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 50rem;
+    align-content: start;
+}
+
+.login-input {
+    margin-top: 2rem;
+}
