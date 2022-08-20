@@ -1,13 +1,13 @@
 <body>
 <%= stylesheet_link_tag "login" %>
 <div>
-  <form id="sign-in-form">
-    <input class="login-input" type="text" id="name" name="name" placeholder="Name">
-    <input class="login-input" type="email" id="email" name="email" placeholder="Email">
-    <input class="login-input" type="password" id="password" name="password" placeholder="Password">
-    <input class="login-input" type="password" id="password-confirm" name="password-confirm" placeholder="Password (again)">
-  </form>
+  <%= form_with :html => { :id => 'sign-in-form' } do |form| %>
+    <%= form.text_field :name, type: "text", placeholder: "Name", class: "login-input" %>
+    <%= form.text_field :email, type: "email", placeholder: "Email", class: "login-input" %>
+    <%= form.text_field :password, type: "password", placeholder: "Password", class: "login-input" %>
+    <%= form.text_field :password_confirm, type: "password", placeholder: "Password (again)", class: "login-input" %>
+    <%= form.submit class: "button primary sign-in-button" %>
+  <% end %>
 
-  <a class="button primary sign-in-button"  href="/signup" style="margin-top: 4rem">Sign Up</a><br>
 </div>
 </body>
