@@ -43,6 +43,8 @@ gem "bootsnap", require: false
 gem 'turbo-rails'
 gem 'stimulus-rails'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

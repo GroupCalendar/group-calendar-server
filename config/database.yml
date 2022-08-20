@@ -16,12 +16,12 @@
 #
 default: &default
   adapter: postgresql
-  database: main_db
-  host: localhost
-  port: 65432
-  username: root
-  password: root
-  encoding: utf8
+  database: <%= ENV['DB_NAME'] %>
+  host: <%= ENV['DB_HOST'] %>
+  port: <%= ENV['DB_PORT'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  encoding: <%= ENV['DB_ENCODING'] %>
 
 development:
   <<: *default
