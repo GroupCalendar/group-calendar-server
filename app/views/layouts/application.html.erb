@@ -11,14 +11,18 @@
 
 <body>
 <%= stylesheet_link_tag "common" %>
-<div class="nav-container" >
+<div class="nav-container">
   <nav class="nav">
-      <a class="brand" style="width: auto;" href="#">Group Calendar</a>
-      <a class="active"href="#" >Home</a>
-      <a href="#">Features</a>
-      <a href="#">Documentation</a>
+    <a class="brand" style="width: auto;" href="#">Group Calendar</a>
+    <a class="active" href="#">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Documentation</a>
     <div class="nav-right">
-      <a class="button primary" href="/login">Sign in</a>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign out', 'logout', :method => :delete, :class => 'button primary outline' %>
+      <% else %>
+        <a class="button primary" href="/login">Sign in</a>
+      <% end %>
     </div>
   </nav>
   <div class="page-content">

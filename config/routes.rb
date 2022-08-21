@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :confirmations, only: [:create, :edit, :new], param: :confirmation_token
 
   post "login", to: "sessions#create"
-  delete "logout", to: "sessions#destroy"
+  get "logout", to: "sessions#destroy"
   get "login", to: "sessions#new"
 
   resources :passwords, only: [:create, :edit, :new, :update], param: :password_reset_token
