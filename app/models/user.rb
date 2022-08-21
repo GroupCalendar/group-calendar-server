@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   CONFIRMATION_TOKEN_EXPIRATION = 10.minutes
-  MAILER_FROM_EMAIL = "no-reply@gatherup.io"
+  MAILER_FROM_EMAIL = ENV['MAILER_FROM_EMAIL']
   PASSWORD_RESET_TOKEN_EXPIRATION = 10.minutes
 
   has_secure_password
