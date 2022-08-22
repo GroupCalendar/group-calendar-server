@@ -1,20 +1,19 @@
 <!-- app/views/sessions/new.html.erb -->
-<%= form_with url: login_path, scope: :user do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
+<%= form_with class:"nc-form", url: login_path, scope: :user do |form| %>
+  <h1>Sign in</h1>
+  <div class="nc-form-input">
+    <%= form.email_field :email, required: true, placeholder: "Email" %>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
+  <div class="nc-form-input">
+    <%= form.password_field :password, required: true, placeholder: "Password" %>
   </div>
-  <div>
+  <div class="nc-form-input">
     <%= form.label :remember_me %>
     <%= form.check_box :remember_me %>
   </div>
-  <%= form.submit "Sign In" %>
+  <%= form.submit "Sign In", class:"nc-form-submit-button" %>
 <% end %>
-<div style="margin-top: 2rem;">
+<div style="margin-top: 4rem;">
   <h5>Don't have an account?</h5>
-  <a class="button outline primary sign-in-button"  href="/sign_up">Create Account</a>
+  <a class="button outline primary nc-form-submit-button" href="/sign_up" style="margin-top: 0" >Create Account</a>
 </div>

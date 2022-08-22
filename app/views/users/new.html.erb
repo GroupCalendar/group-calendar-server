@@ -1,16 +1,17 @@
-<%= form_with model: @user, url: sign_up_path do |form| %>
+<%= form_with class:"nc-form", model: @user, url: sign_up_path do |form| %>
+  <h1>Create your account</h1>
   <%= render partial: "shared/form_errors", locals: { object: form.object } %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
+  <div class="nc-form-input">
+    <%= form.text_field :name, required: true, placeholder: "Name" %>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
+  <div class="nc-form-input">
+    <%= form.email_field :email, required: true, placeholder: "Email" %>
   </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, required: true %>
+  <div class="nc-form-input">
+    <%= form.password_field :password, required: true, placeholder: "Password" %>
   </div>
-  <%= form.submit "Sign Up" %>
+  <div class="nc-form-input">
+    <%= form.password_field :password_confirmation, required: true, placeholder: "Password (again)" %>
+  </div>
+  <%= form.submit "Sign Up", class:"nc-form-submit-button" %>
 <% end %>

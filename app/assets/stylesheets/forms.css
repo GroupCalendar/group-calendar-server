@@ -1,4 +1,4 @@
-#sign-in-form {
+.nc-form {
     align-self: center;
     text-align: center;
     margin-left: auto;
@@ -9,7 +9,7 @@
     margin-top: 10rem
 }
 
-.sign-in-button {
+.nc-form-submit-button {
     margin-top: 4rem;
     text-align: center;
     margin-left: auto;
@@ -19,6 +19,6 @@
     align-content: start;
 }
 
-.login-input {
+.nc-form-input {
     margin-top: 2rem;
 }
