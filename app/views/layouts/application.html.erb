@@ -15,12 +15,11 @@
 <div class="nav-container">
   <nav class="nav">
     <a class="brand" style="width: auto;" href="/"><%= ENV['APP_NAME'] %></a>
-    <a class="active" href="#">Home</a>
-    <a href="#">Features</a>
-    <a href="#">Documentation</a>
-    <div class="nav-right">
-      <% if user_signed_in? %>
-
+    <% if user_signed_in? %>
+      <a class="active" href="/dashboard">Dashboard</a>
+      <a href="/groups">Groups</a>
+      <a href="/docs">Documentation</a>
+      <div class="nav-right">
         <div style="padding: 1rem">
           <details class=dropdown>
             <summary class="button primary outline">My Profile</summary>
@@ -31,11 +30,17 @@
             </div>
           </details>
         </div>
-
-      <% else %>
-        <a class="button primary" href="/login">Sign in</a>
-      <% end %>
-    </div>
+      </div>
+    <% else %>
+      <a class="active" href="#">Home</a>
+      <a href="#">Features</a>
+      <a href="#">Documentation</a>
+      <div class="nav-right">
+        <div style="padding: 1rem">
+          <a class="button primary" href="/login">Sign in</a>
+        </div>
+      </div>
+    <% end %>
   </nav>
   <div class="page-content">
     <%= yield %>

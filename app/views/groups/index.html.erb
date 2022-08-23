@@ -1,0 +1,36 @@
+<body>
+<%= stylesheet_link_tag "common" %>
+<div>
+  <h1 class="text-dark" style="margin-top: 10rem;">Groups</h1>
+
+  <div style="padding: 1rem">
+    <a class="button primary" href="/groups/new">Create a group</a>
+  </div>
+
+  <% if @groups.any? %>
+    <table>
+      <thead>
+      <tr>
+        <th>Group</th>
+        <th>Members</th>
+        <th>Access level</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @groups.each do |group| %>
+        <tr>
+          <td><%= group.name %></td>
+          <td><%= group.name %></td>
+          <td><%= group.membership(current_user).access_level %></td>
+          <% if group.can_be_deleted(current_user) %>
+            <td><%= button_to "Delete", '/groups', method: :delete %></td>
+          <% else %>
+            <td><%= button_to "Leave", '/groups', method: :delete, class: 'button primary outline' %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+</body>

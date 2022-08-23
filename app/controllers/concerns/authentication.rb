@@ -30,19 +30,14 @@ module Authentication
   end
 
   def redirect_if_authenticated
-    redirect_to root_path, alert: "You are already logged in." if user_signed_in?
+    redirect_to "/dashboard", alert: "You are already logged in." if user_signed_in?
   end
 
   def authenticate_user!
-    store_location
     redirect_to login_path, alert: "You need to login to access that page." unless user_signed_in?
   end
 
   private
-
-  def store_location
-    session[:user_return_to] = request.original_url if request.get? && request.local?
-  end
 
   def user_signed_in?
     Current.user.present?
