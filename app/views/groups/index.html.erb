@@ -1,11 +1,7 @@
 <body>
 <%= stylesheet_link_tag "common" %>
 <div>
-  <h1 class="text-dark" style="margin-top: 10rem;">Groups</h1>
-
-  <div style="padding: 1rem">
-    <a class="button primary" href="/groups/new">Create a group</a>
-  </div>
+  <h1 class="text-dark is-left" style="margin-top: 10rem;">Groups:</h1>
 
   <% if @groups.any? %>
     <table>
@@ -20,12 +16,14 @@
       <% @groups.each do |group| %>
         <tr>
           <td>
-            <%= link_to group.name, group %>
+            <strong>
+              <%= link_to group.name, group, class: 'text-dark' %>
+            </strong>
           </td>
           <td><%= group.memberships.size %></td>
           <td><%= group.membership(current_user).access_level %></td>
           <% if group.can_be_deleted(current_user) %>
-            <td><%= button_to "Delete", '/groups', method: :delete %></td>
+            <td><%= button_to "Delete", '/groups', method: :delete, class: 'button error' %></td>
           <% else %>
             <td><%= button_to "Leave", '/groups', method: :delete, class: 'button primary outline' %></td>
           <% end %>
@@ -34,5 +32,9 @@
       </tbody>
     </table>
   <% end %>
+
+  <div class="is-left" style="margin-top: 3rem">
+    <a class="button primary" href="/groups/new">Create a group</a>
+  </div>
 </div>
 </body>

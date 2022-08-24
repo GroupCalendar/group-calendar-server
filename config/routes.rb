@@ -30,4 +30,5 @@ Rails.application.routes.draw do
 
   resources :dashboard
   resources :groups
+  resources :documentation
 end

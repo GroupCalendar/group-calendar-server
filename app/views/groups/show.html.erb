@@ -19,11 +19,13 @@
       <% @group.memberships.each do |membership| %>
         <tr>
           <td>
-            <%= link_to membership.user.name, "/" %>
+            <strong>
+              <%= link_to membership.user.name, "/", class: 'text-dark' %>
+            </strong>
           </td>
           <td><%= membership.access_level %></td>
           <% if @group.membership(current_user).access_level == 'owner' %>
-            <td class="is-right"><%= button_to "Remove", '/memberships', method: :delete %></td>
+            <td class="is-right"><%= button_to "Remove", '/memberships', method: :delete, class: 'button primary outline' %></td>
           <% end %>
         </tr>
       <% end %>
