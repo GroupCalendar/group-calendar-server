@@ -1,0 +1,33 @@
+<body>
+<%= stylesheet_link_tag "common" %>
+<div>
+  <h3 class="text-dark" style="margin-top: 10rem;"><%= @group.name %></h3>
+
+  <h1 class="text-dark is-left" style="margin-top: 10rem;">Members:</h1>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Access level</th>
+        <% if @group.membership(current_user).access_level == 'owner' %>
+          <th class="is-right">Remove</th>
+        <% end %>
+      </tr>
+      </thead>
+      <tbody>
+      <% @group.memberships.each do |membership| %>
+        <tr>
+          <td>
+            <%= link_to membership.user.name, "/" %>
+          </td>
+          <td><%= membership.access_level %></td>
+          <% if @group.membership(current_user).access_level == 'owner' %>
+            <td class="is-right"><%= button_to "Remove", '/memberships', method: :delete %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
+</body>

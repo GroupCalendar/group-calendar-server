@@ -19,8 +19,10 @@
       <tbody>
       <% @groups.each do |group| %>
         <tr>
-          <td><%= group.name %></td>
-          <td><%= group.name %></td>
+          <td>
+            <%= link_to group.name, group %>
+          </td>
+          <td><%= group.memberships.size %></td>
           <td><%= group.membership(current_user).access_level %></td>
           <% if group.can_be_deleted(current_user) %>
             <td><%= button_to "Delete", '/groups', method: :delete %></td>

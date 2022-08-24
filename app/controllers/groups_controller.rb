@@ -1,4 +1,8 @@
 class GroupsController < ApplicationController
+
+  def show
+    @group = Group.find_by_id(params[:id])
+  end
   def index
     @groups = current_user.groups
   end
