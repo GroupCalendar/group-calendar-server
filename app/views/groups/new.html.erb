@@ -1,8 +1,42 @@
-<%= form_with class:"nc-form", model: @group do |form| %>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<%= form_with class: "nc-form", model: @group do |form| %>
   <h1>Create new groups</h1>
   <%= render partial: "shared/form_errors", locals: { object: form.object } %>
   <div class="nc-form-input">
     <%= form.text_field :name, required: true, placeholder: "Name" %>
   </div>
-  <%= form.submit "Save", class:"nc-form-submit-button" %>
+  <div class="nc-form-input">
+    <div class="text-left">
+      <label>Public visibility</label>
+    </div>
+    <%= form.select(:visibility_type, options_for_select([["Visible", "visible"], ["Hidden", "hidden"]]), :selected => "Visible") %>
+  </div>
+  <div class="nc-form-input">
+    <div class="text-left">
+      <label>Join permissions</label>
+    </div>
+    <%= form.select(:join_type, options_for_select([
+                                                     ["Open for all", "open"],
+                                                     ["Need approval", "need_approval"],
+                                                     ["Need passcode", "need_passcode"],
+                                                     ["Forbidden", "forbidden"]
+                                                   ]), :selected => "Visible") %>
+  </div>
+  <div id="passcode_div" class="nc-form-input" style="display: none;">
+    <%= form.text_field :passcode, required: false, placeholder: "Passcode" %>
+  </div>
+  <%= form.submit "Save", class: "nc-form-submit-button" %>
+<% end %>
+
+<%= javascript_tag do %>
+  var jointype_select = $("#group_join_type");
+  jointype_select.change(function(){
+  var passcode_div = $("#passcode_div");
+  if (jointype_select.val() === "need_passcode") {
+  passcode_div.show(200);
+  } else {
+  passcode_div.hide(200);
+  }
+  });
 <% end %>
