@@ -19,6 +19,10 @@ class GroupsController < ApplicationController
     redirect_to '/groups', notice: "Created"
   end
 
+  def search
+
+  end
+
   private
 
   def create_group_params

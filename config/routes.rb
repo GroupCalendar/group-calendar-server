@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get "groups/search", to: "groups#search"
+
   resources :dashboard
   resources :groups
   resources :documentation

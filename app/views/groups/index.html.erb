@@ -1,7 +1,17 @@
 <body>
-<%= stylesheet_link_tag "common" %>
 <div>
-  <h1 class="text-dark is-left" style="margin-top: 10rem;">Groups:</h1>
+
+
+  <div style="margin-top: 10rem; display: flex; flex-direction:row;">
+    <div>
+      <h1 class="text-dark is-left">Groups:</h1>
+    </div>
+    <div class="is-right" style="flex: 1 1 0;">
+      <a class="button primary outline" href="/groups/new">Create a group</a>
+      <a class="button primary" href="/groups/search">Find a group</a>
+    </div>
+  </div>
+
 
   <% if @groups.any? %>
     <table>
@@ -38,8 +48,5 @@
     </table>
   <% end %>
 
-  <div class="is-left" style="margin-top: 3rem">
-    <a class="button primary" href="/groups/new">Create a group</a>
-  </div>
 </div>
 </body>

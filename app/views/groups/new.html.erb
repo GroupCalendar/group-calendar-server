@@ -1,7 +1,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 
 <%= form_with class: "nc-form", model: @group do |form| %>
-  <h1>Create new groups</h1>
+  <h1 class="text-dark">Create new group</h1>
   <%= render partial: "shared/form_errors", locals: { object: form.object } %>
   <div class="nc-form-input">
     <%= form.text_field :name, required: true, placeholder: "Name" %>

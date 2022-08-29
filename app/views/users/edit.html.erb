@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "forms" %>
 <%= form_with class:"nc-form", model: @user, url: account_path, method: :put do |form| %>
-  <h1>Edit Account</h1>
+  <h1 class="text-dark">Edit Account</h1>
   <%= render partial: "shared/form_errors", locals: { object: form.object } %>
   <div class="nc-form-input">
     <%= form.label :name, "Current Name" %>
