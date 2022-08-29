@@ -15,12 +15,38 @@ class Group < ApplicationRecord
     forbidden: 3
   }
 
+  def visibility_type_title
+    case visibility_type
+    when "visible"
+      "Visible"
+    when "hidden"
+      "Hidden"
+    else
+      ""
+    end
+  end
+
+  def join_type_title
+    case join_type
+    when "open"
+      "Open"
+    when "need_approval"
+      "Need approval"
+    when "need_passcode"
+      "Need passcode"
+    when "forbidden"
+      "Forbidden"
+    else
+      ""
+    end
+  end
+
   def can_be_deleted(source_user_id)
     membership(source_user_id).access_level == 'owner'
   end
 
   def membership(source_user_id)
-    memberships.where(memberships: {user_id: source_user_id, group_id: id}).first!
+    memberships.where(memberships: { user_id: source_user_id, group_id: id }).first!
   end
 
 end

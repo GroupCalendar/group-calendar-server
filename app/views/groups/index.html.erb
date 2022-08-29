@@ -10,6 +10,9 @@
         <th>Group</th>
         <th>Members</th>
         <th>Access level</th>
+        <th>Visibility</th>
+        <th>Join type</th>
+        <th>Action</th>
       </tr>
       </thead>
       <tbody>
@@ -22,6 +25,8 @@
           </td>
           <td><%= group.memberships.size %></td>
           <td><%= group.membership(current_user).access_level %></td>
+          <td><%= group.visibility_type_title %></td>
+          <td><%= group.join_type_title %></td>
           <% if group.can_be_deleted(current_user) %>
             <td><%= button_to "Delete", '/groups', method: :delete, class: 'button error' %></td>
           <% else %>

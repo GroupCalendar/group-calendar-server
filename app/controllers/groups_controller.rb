@@ -22,6 +22,6 @@ class GroupsController < ApplicationController
   private
 
   def create_group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, :visibility_type, :join_type, :passcode)
   end
 end
