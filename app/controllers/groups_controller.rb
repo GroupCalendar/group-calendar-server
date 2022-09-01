@@ -20,7 +20,9 @@ class GroupsController < ApplicationController
   end
 
   def search
-
+    if params[:query]
+      @groups = Group.where("name ilike ?", "%#{params[:query]}%")
+    end
   end
 
   private

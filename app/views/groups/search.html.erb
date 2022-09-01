@@ -2,8 +2,20 @@
 <%= stylesheet_link_tag "common" %>
 <div>
 
-  <h1 class="text-dark is-left" style="margin-top: 10rem;">Search</h1>
+  <%= form_tag('search', method: 'get', class: "nc-form") do %>
+    <div class="nc-form-input" style="margin-top: 1rem; margin-bottom: 2rem; display: flex; flex-direction:row;">
+      <div style="width: 100%;">
+        <%= text_field_tag(:query, params[:query], placeholder: 'Search groups...') %>
+      </div>
+      <div style="flex: 0; margin: 0 0 0 1rem;">
+        <%= submit_tag("Search", name: nil) %>
+      </div>
+    </div>
+  <% end %>
 
+  <% if @groups and @groups.any? %>
+    <%= render "groups_list/groups_list" %>
+  <% end %>
 
 </div>
 </body>
