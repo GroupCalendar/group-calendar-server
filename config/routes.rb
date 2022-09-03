@@ -30,6 +30,9 @@ Rails.application.routes.draw do
 
   get "groups/search", to: "groups#search"
 
+  get "groups/leave", to: "groups#leave"
+  get "groups/join", to: "groups#join"
+
   resources :dashboard
   resources :groups
   resources :documentation

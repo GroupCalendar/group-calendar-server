@@ -25,6 +25,26 @@ class GroupsController < ApplicationController
     end
   end
 
+  def join
+    if params[:id]
+      @group = Group.find_by_id(params[:id])
+      if @group
+        Membership.create({user: current_user, group: @group, access_level: 'member'})
+      end
+      redirect_to '/groups', notice: "Joined"
+    end
+  end
+
+  def leave
+    if params[:id]
+      @group = Group.find_by_id(params[:id])
+      if @group
+        Membership.destroy_by({user: current_user, group: @group})
+      end
+      redirect_to '/groups', notice: "Left"
+    end
+  end
+
   private
 
   def create_group_params

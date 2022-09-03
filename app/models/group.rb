@@ -49,7 +49,7 @@ class Group < ApplicationRecord
   end
 
   def membership(source_user_id)
-    memberships.where(memberships: { user_id: source_user_id, group_id: id }).first!
+    memberships.where(memberships: { user_id: source_user_id, group_id: id }).first
   end
 
 end

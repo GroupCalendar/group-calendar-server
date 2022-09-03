@@ -18,13 +18,21 @@
         </strong>
       </td>
       <td><%= group.memberships.size %></td>
-      <td><%= group.membership(current_user).access_level %></td>
+      <% if group.membership(current_user) %>
+        <td><%= group.membership(current_user).access_level %></td>
+      <% else %>
+        <td> - </td>
+      <% end %>
       <td><%= group.visibility_type_title %></td>
       <td><%= group.join_type_title %></td>
-      <% if group.can_be_deleted(current_user) %>
-        <td class="is-right"><%= button_to "Delete", '/groups', method: :delete, class: 'button error' %></td>
+      <% if group.membership(current_user) %>
+        <% if group.can_be_deleted(current_user) %>
+          <td class="is-right"><%= button_to "Delete", '/groups', method: :delete, class: 'button error' %></td>
+        <% else %>
+          <td class="is-right"><%= button_to "Leave", '/groups/leave', method: :get, params: { id: group.id }, class: 'button primary outline' %></td>
+        <% end %>
       <% else %>
-        <td class="is-right"><%= button_to "Leave", '/groups', method: :delete, class: 'button primary outline' %></td>
+        <td class="is-right"><%= button_to "Join", '/groups/join', method: :get, params: { id: group.id }, class: 'button primary' %></td>
       <% end %>
     </tr>
   <% end %>
