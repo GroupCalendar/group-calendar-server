@@ -1,0 +1,28 @@
+<h1>New event</h1>
+
+<%= form_with class:"nc-form", model: @event, url: events_path do |form| %>
+  <h1>Schedule an event</h1>
+  <%= render partial: "shared/form_errors", locals: { object: form.object } %>
+  <div class="nc-form-input">
+    <div class="text-left">
+      <label>Group:</label>
+    </div>
+    <%= collection_select(:event, :group_id, @groups, :id, :name) %>
+  </div>
+  <div class="nc-form-input">
+    <%= form.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="nc-form-input">
+    <div class="text-left">
+      <label>Starts at:</label>
+    </div>
+    <%= form.datetime_field :start_time, value: @prefilled_start_time, required: true %>
+  </div>
+  <div class="nc-form-input">
+    <div class="text-left">
+      <label>Ends at:</label>
+    </div>
+    <%= form.datetime_field :end_time, value: @prefilled_end_time, required: true %>
+  </div>
+  <%= form.submit "Schedule", class:"nc-form-submit-button" %>
+<% end %>

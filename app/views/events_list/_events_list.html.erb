@@ -1,0 +1,18 @@
+<table>
+  <thead>
+  <tr>
+    <th>Event Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @group.events.each do |event| %>
+    <tr>
+      <td>
+        <strong>
+          <%= link_to event.name, event, class: 'text-dark' %>
+        </strong>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
