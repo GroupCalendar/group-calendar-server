@@ -24,6 +24,12 @@
   <% end %>
   </tbody>
 </table>
-<%= month_calendar do |date| %>
+<%= month_calendar events: @group.events do |date, meetings| %>
   <%= date %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.name %>
+    </div>
+  <% end %>
 <% end %>
