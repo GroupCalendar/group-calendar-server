@@ -49,6 +49,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pg_search', '~> 2.3', '>= 2.3.2'
 
+gem 'sass-rails'
+gem 'sassc-rails'
 gem "simple_calendar", "~> 2.0"
 
 group :development, :test do
