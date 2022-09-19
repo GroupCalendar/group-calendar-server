@@ -2,6 +2,9 @@
   <thead>
   <tr>
     <th>Event Name</th>
+    <th>Group</th>
+    <th>Start</th>
+    <th>End</th>
   </tr>
   </thead>
   <tbody>
@@ -12,6 +15,11 @@
           <%= link_to event.name, event, class: 'text-dark' %>
         </strong>
       </td>
+      <td>
+          <%= link_to event.group.name, event, class: 'text-dark' %>
+      </td>
+      <td><%= event.start_time %></td>
+      <td><%= event.end_time %></td>
     </tr>
   <% end %>
   </tbody>
