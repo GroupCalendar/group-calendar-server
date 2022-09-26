@@ -3,8 +3,10 @@
 <div>
   <h1 class="text-dark" style="margin-top: 10rem;">Dashboard</h1>
 
-  <%= calendar(number_of_days: 1) do |date| %>
-    <%= date %>
+  <% if @events and @events.any? %>
+    <%= render "events_list/events_list" %>
+  <% else %>
+    <%= render "no_data/no_data_list" %>
   <% end %>
 
 </div>

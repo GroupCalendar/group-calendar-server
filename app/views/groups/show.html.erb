@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  <% if @group and @group.events and @group.events.any? %>
+  <% if @events and @events.any? %>
     <%= render "events_list/events_list" %>
   <% else %>
     <%= render "no_data/no_data_list" %>

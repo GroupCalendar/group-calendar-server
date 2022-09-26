@@ -8,7 +8,7 @@
   </tr>
   </thead>
   <tbody>
-  <% @group.events.each do |event| %>
+  <% @events.each do |event| %>
     <tr>
       <td>
         <strong>
@@ -16,7 +16,7 @@
         </strong>
       </td>
       <td>
-          <%= link_to event.group.name, event, class: 'text-dark' %>
+          <%= link_to event.group.name, event.group, class: 'text-dark' %>
       </td>
       <td><%= event.start_time %></td>
       <td><%= event.end_time %></td>
@@ -24,12 +24,15 @@
   <% end %>
   </tbody>
 </table>
-<%= month_calendar events: @group.events do |date, meetings| %>
+<%= month_calendar events: @events do |date, meetings| %>
   <%= date %>
 
   <% meetings.each do |meeting| %>
-    <div>
-      <%= meeting.name %>
-    </div>
+    <%= link_to meeting, class: 'text-white', :action => 'go' do %>
+      <div class="month-calendar-event-container">
+        <span style="font-size: 1.2rem; font-weight: bold; white-space:pre;"><%= meeting.start_time.hour %>:<%= meeting.start_time.min %> </span>
+        <span class="month-calendar-event-title"><%= meeting.name %></span>
+      </div>
+    <% end %>
   <% end %>
 <% end %>

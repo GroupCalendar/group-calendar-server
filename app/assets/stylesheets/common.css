@@ -57,3 +57,23 @@ h1 {
     display: inline-flex;
     align-items: center;
 }
+
+.month-calendar-event-container {
+    background-color: var(--color-primary);
+    color: var(--bg-color);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 4rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 14rem;
+}
+
+.month-calendar-event-title {
+    text-overflow: ellipsis;
+    font-size: 1.6rem;
+}

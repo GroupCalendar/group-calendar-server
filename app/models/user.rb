@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships
+  has_many :events, through: :groups
 
   attr_accessor :current_password
 
