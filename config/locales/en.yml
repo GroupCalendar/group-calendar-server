@@ -31,3 +31,15 @@
 
 en:
   hello: "Hello world"
+  dashboard: "Dashboard"
+  groups: "Groups"
+  documentation: "Documentation"
+  my_profile: "My Profile"
+  edit: "Edit"
+  sign_in: "Sign in"
+  sign_out: "Sign out"
+  copyright_text: "2022 NextCalendar"
+  confirm_email: "Confirm Email"
+  name: "Name"
+  start_time: "Start time"
+  end_time: "End time"

@@ -21,17 +21,17 @@
   <nav class="nav">
     <a class="brand" style="width: auto;" href="/"><%= ENV['APP_NAME'] %></a>
     <% if user_signed_in? %>
-      <a class="<%= 'active' if controller.controller_name == 'dashboard' %>" href="/dashboard">Dashboard</a>
-      <a class="<%= 'active' if controller.controller_name == 'groups' %>" href="/groups">Groups</a>
-      <a class="<%= 'active' if controller.controller_name == 'documentation' %>" href="/documentation">Documentation</a>
+      <a class="<%= 'active' if controller.controller_name == 'dashboard' %>" href="/dashboard"><%= I18n.t 'dashboard' %></a>
+      <a class="<%= 'active' if controller.controller_name == 'groups' %>" href="/groups"><%= I18n.t 'groups' %></a>
+      <a class="<%= 'active' if controller.controller_name == 'documentation' %>" href="/documentation"><%= I18n.t 'documentation' %></a>
       <div class="nav-right">
         <div style="padding: 1rem">
           <details class=dropdown>
-            <summary class="button primary outline">My Profile</summary>
+            <summary class="button primary outline"><%= I18n.t 'my_profile' %></summary>
             <div class=card style="margin-top: 1rem">
-              <p><a href="/account">Edit</a></p>
+              <p><a href="/account"><%= I18n.t 'edit' %></a></p>
               <hr/>
-              <%= link_to 'Sign out', '/logout', :method => :delete, :class => 'text-error' %>
+              <%= link_to I18n.t('sign_out'), '/logout', :method => :delete, :class => 'text-error' %>
             </div>
           </details>
         </div>
@@ -42,7 +42,7 @@
       <a href="#">Documentation</a>
       <div class="nav-right">
         <div style="padding: 1rem">
-          <a class="button primary" href="/login">Sign in</a>
+          <a class="button primary" href="/login"><%= I18n.t 'sign_in' %></a>
         </div>
       </div>
     <% end %>
@@ -51,7 +51,7 @@
     <%= yield %>
   </div>
   <div class="nc-footer">
-    <h6>2022 NextCalendar</h6>
+    <h6><%= I18n.t 'copyright_text' %></h6>
   </div>
 </div>
 </body>

@@ -1,16 +1,16 @@
 <div id="<%= dom_id event %>">
   <p>
-    <strong>Name:</strong>
+    <strong><%= I18n.t 'name' %>:</strong>
     <%= event.name %>
   </p>
 
   <p>
-    <strong>Start time:</strong>
+    <strong><%= I18n.t 'start_time' %>:</strong>
     <%= event.start_time %>
   </p>
 
   <p>
-    <strong>End time:</strong>
+    <strong><%= I18n.t 'end_time' %>:</strong>
     <%= event.end_time %>
   </p>
 
