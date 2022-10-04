@@ -1,29 +1,43 @@
-<table>
-  <thead>
-  <tr>
-    <th>Event Name</th>
-    <th>Group</th>
-    <th>Start</th>
-    <th>End</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @events.each do |event| %>
+<h3 class="text-dark is-left" style="margin-top: 10rem;">Today's Events</h3>
+<% if @todays_events.any? %>
+  <table>
+    <thead>
     <tr>
-      <td>
-        <strong>
-          <%= link_to event.name, event, class: 'text-dark' %>
-        </strong>
-      </td>
-      <td>
-          <%= link_to event.group.name, event.group, class: 'text-dark' %>
-      </td>
-      <td><%= event.start_time %></td>
-      <td><%= event.end_time %></td>
+      <th>Event Name</th>
+      <th>Group</th>
+      <th>Start</th>
+      <th>End</th>
     </tr>
-  <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+    <% @todays_events.each do |event| %>
+      <tr>
+        <td>
+          <strong>
+            <%= link_to event.name, event, class: 'text-dark' %>
+          </strong>
+        </td>
+        <td>
+          <%= link_to event.group.name, event.group, class: 'text-dark' %>
+        </td>
+        <td><%= event.start_time %></td>
+        <td><%= event.end_time %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <span>No events today.</span>
+<% end %>
+
+<div style="margin-top: 10rem; display: flex; flex-direction:row;">
+  <div>
+    <h3 class="text-dark is-left">Calendar</h3>
+  </div>
+  <div class="is-right" style="flex: 1 1 0;">
+    <a class="button primary" href="/events/new?group_id=<%= @group ? :@group.id : nil %>">Create an event</a>
+  </div>
+</div>
 <%= month_calendar events: @events do |date, meetings| %>
   <%= date %>
 

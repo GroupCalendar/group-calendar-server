@@ -2,16 +2,7 @@
 <%= stylesheet_link_tag "common" %>
 <%= stylesheet_link_tag "simple_calendar" %>
 <div>
-  <h3 class="text-dark" style="margin-top: 10rem;"><%= @group.name %></h3>
-
-  <div style="margin-top: 10rem; display: flex; flex-direction:row;">
-    <div>
-      <h1 class="text-dark is-left">Events:</h1>
-    </div>
-    <div class="is-right" style="flex: 1 1 0;">
-      <a class="button primary" href="/events/new?group_id=<%= @group.id %>">Create an event</a>
-    </div>
-  </div>
+  <h1 class="text-dark" style="margin-top: 10rem;"><%= @group.name %></h1>
 
   <% if @events and @events.any? %>
     <%= render "events_list/events_list" %>
@@ -19,7 +10,7 @@
     <%= render "no_data/no_data_list" %>
   <% end %>
 
-  <h1 class="text-dark is-left" style="margin-top: 10rem;">Members:</h1>
+  <h3 class="text-dark is-left" style="margin-top: 10rem;">Members:</h3>
 
   <table>
     <thead>

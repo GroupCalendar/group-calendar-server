@@ -3,6 +3,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find_by_id(params[:id])
     @events = @group.events
+    @todays_events = @events.select { |event| event.start_time > DateTime.now }
   end
 
   def index
